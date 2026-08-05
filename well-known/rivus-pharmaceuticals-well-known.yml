@@ -1,0 +1,108 @@
+generated: '2026-08-05'
+method: probed
+source: live probes of https://www.rivuspharma.com/.well-known/* and the API-discovery paths on 2026-08-05
+host: https://www.rivuspharma.com
+result: none
+note: >-
+  No /.well-known/ discovery document is published on rivuspharma.com. Every path below was probed
+  against both the apex (rivuspharma.com) and the canonical www host and returned a genuine 404 —
+  not a soft-404: the site root returns 200 while a deliberate control path
+  (/definitely-not-a-real-path-12345) returns 404, so the origin distinguishes real pages from
+  missing ones and the 404s recorded here are real absences rather than an SPA catch-all. There is
+  no security.txt, no OIDC or OAuth metadata, no api-catalog, no ai-plugin.json, and no A2A agent
+  card at either the canonical /.well-known/agent-card.json or the legacy /.well-known/agent.json
+  path. The site publishes no robots.txt and no sitemap.xml.
+documents:
+- path: /.well-known/security.txt
+  status: 404
+  present: false
+- path: /.well-known/openid-configuration
+  status: 404
+  present: false
+- path: /.well-known/oauth-authorization-server
+  status: 404
+  present: false
+- path: /.well-known/api-catalog
+  status: 404
+  present: false
+- path: /.well-known/ai-plugin.json
+  status: 404
+  present: false
+- path: /.well-known/agent-card.json
+  status: 404
+  present: false
+- path: /.well-known/agent.json
+  status: 404
+  present: false
+- path: /llms.txt
+  status: 404
+  present: false
+- path: /apis.json
+  status: 404
+  present: false
+spec_discovery:
+  note: >-
+    Contract discovery (pipeline STEP 0b) run against rivuspharma.com, the www host, and every
+    plausible API host. No OpenAPI, Swagger, GraphQL SDL, AsyncAPI, MCP endpoint or Postman
+    collection exists. Rivus Pharmaceuticals is a therapeutics developer and declares no API,
+    developer program or technology platform anywhere on its public site.
+  probes:
+  - path: /openapi.json
+    status: 404
+  - path: /openapi.yaml
+    status: 404
+  - path: /swagger.json
+    status: 404
+  - path: /api-docs
+    status: 404
+  - path: /docs
+    status: 404
+  - path: /redoc
+    status: 404
+  - path: /graphql
+    status: 404
+  - path: /api
+    status: 404
+  - path: /developer
+    status: 404
+  - path: /developers
+    status: 404
+  hosts:
+  - host: api.rivuspharma.com
+    dns: NXDOMAIN
+  - host: developer.rivuspharma.com
+    dns: NXDOMAIN
+  - host: developers.rivuspharma.com
+    dns: NXDOMAIN
+  - host: docs.rivuspharma.com
+    dns: NXDOMAIN
+  - host: portal.rivuspharma.com
+    dns: NXDOMAIN
+  - host: app.rivuspharma.com
+    dns: NXDOMAIN
+  - host: status.rivuspharma.com
+    dns: NXDOMAIN
+  - host: trust.rivuspharma.com
+    dns: NXDOMAIN
+  - host: data.rivuspharma.com
+    dns: NXDOMAIN
+  - host: partners.rivuspharma.com
+    dns: NXDOMAIN
+  github_org:
+  - url: https://api.github.com/orgs/rivuspharma
+    status: 404
+  - url: https://api.github.com/orgs/rivus-pharmaceuticals
+    status: 404
+  - url: https://api.github.com/orgs/rivuspharmaceuticals
+    status: 404
+  packages:
+    note: >-
+      No first-party client library exists on any public registry. An npm package named `rivus-sdk`
+      is published, but it is a TypeScript SDK for Rivus payment-streaming contracts on the Stacks
+      blockchain — an unrelated project that shares the name. It is deliberately NOT recorded as a
+      package for this company.
+robots:
+  url: https://www.rivuspharma.com/robots.txt
+  status: 404
+  present: false
+  sitemap: null
