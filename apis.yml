@@ -10,6 +10,17 @@ description: 'Rivus Pharmaceuticals is a privately held clinical-stage biopharma
   obesity, is in IND-enabling studies. Rivus is a therapeutics developer, not a software or
   technology vendor: it publishes no developer program, public API, SDK or machine-readable
   specification of any kind.'
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://www.rivuspharma.com/themes/default/images/logo.svg
 url: https://raw.githubusercontent.com/api-evangelist/rivus-pharmaceuticals/refs/heads/main/apis.yml
 x-type: company
